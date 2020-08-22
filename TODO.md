@@ -1,0 +1,4 @@
+- optimize tailwind for production with purgeCSS
+- prettier
+- typescript
+- eslint

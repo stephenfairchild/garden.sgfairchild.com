@@ -1,0 +1,34 @@
+{
+  "ast": null,
+  "code": "import _extends from \"@babel/runtime/helpers/esm/extends\";\nvar _jsxFileName = \"/home/stephen/Apps/next-portfolio/src/pages/posts/[slug].tsx\";\nimport React from \"react\";\nvar __jsx = React.createElement;\nimport imageUrlBuilder from \"@sanity/image-url\";\nimport BlockContent from \"@sanity/block-content-to-react\";\nimport client from \"../../sanity-client\";\n\nfunction urlFor(source) {\n  return imageUrlBuilder(client).image(source);\n}\n\nexport var __N_SSP = true;\nexport default function Post(props) {\n  var _props$title = props.title,\n      title = _props$title === void 0 ? \"Missing title\" : _props$title,\n      _props$name = props.name,\n      name = _props$name === void 0 ? \"Missing name\" : _props$name,\n      authorImage = props.authorImage,\n      _props$body = props.body,\n      body = _props$body === void 0 ? [] : _props$body;\n  return __jsx(\"article\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 27,\n      columnNumber: 5\n    }\n  }, __jsx(\"h1\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 28,\n      columnNumber: 7\n    }\n  }, title), __jsx(\"span\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 29,\n      columnNumber: 7\n    }\n  }, \"By \", name), authorImage && __jsx(\"div\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 31,\n      columnNumber: 9\n    }\n  }, __jsx(\"img\", {\n    alt: \"The author\",\n    src: urlFor(authorImage).width(50).url(),\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 32,\n      columnNumber: 11\n    }\n  })), __jsx(BlockContent, _extends({\n    blocks: body,\n    imageOptions: {\n      w: 320,\n      h: 240,\n      fit: \"max\"\n    }\n  }, client.config(), {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 35,\n      columnNumber: 7\n    }\n  })));\n}\n_c = Post;\n;\n\nvar _c;\n\n$RefreshReg$(_c, \"Post\");",
+  "map": {
+    "version": 3,
+    "sources": ["/home/stephen/Apps/next-portfolio/src/pages/posts/[slug].tsx"],
+    "names": [
+      "imageUrlBuilder",
+      "BlockContent",
+      "client",
+      "urlFor",
+      "source",
+      "image",
+      "Post",
+      "props",
+      "title",
+      "name",
+      "authorImage",
+      "body",
+      "width",
+      "url",
+      "w",
+      "h",
+      "fit",
+      "config"
+    ],
+    "mappings": ";;;;AAAA,OAAOA,eAAP,MAA4B,mBAA5B;AACA,OAAOC,YAAP,MAAyB,gCAAzB;AACA,OAAOC,MAAP,MAAmB,qBAAnB;;AAGA,SAASC,MAAT,CAAgBC,MAAhB,EAAwB;AACtB,SAAOJ,eAAe,CAACE,MAAD,CAAf,CAAwBG,KAAxB,CAA8BD,MAA9B,CAAP;AACD;;;AAWD,eAAe,SAASE,IAAT,CAAcC,KAAd,EAAqB;AAAA,qBAM9BA,KAN8B,CAEhCC,KAFgC;AAAA,MAEhCA,KAFgC,6BAExB,eAFwB;AAAA,oBAM9BD,KAN8B,CAGhCE,IAHgC;AAAA,MAGhCA,IAHgC,4BAGzB,cAHyB;AAAA,MAIhCC,WAJgC,GAM9BH,KAN8B,CAIhCG,WAJgC;AAAA,oBAM9BH,KAN8B,CAKhCI,IALgC;AAAA,MAKhCA,IALgC,4BAKzB,EALyB;AAOlC,SACE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAKH,KAAL,CADF,EAEE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,YAAUC,IAAV,CAFF,EAGGC,WAAW,IACV;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE;AAAK,IAAA,GAAG,EAAC,YAAT;AAAsB,IAAA,GAAG,EAAEP,MAAM,CAACO,WAAD,CAAN,CAAoBE,KAApB,CAA0B,EAA1B,EAA8BC,GAA9B,EAA3B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IADF,CAJJ,EAQE,MAAC,YAAD;AACE,IAAA,MAAM,EAAEF,IADV;AAEE,IAAA,YAAY,EAAE;AAAEG,MAAAA,CAAC,EAAE,GAAL;AAAUC,MAAAA,CAAC,EAAE,GAAb;AAAkBC,MAAAA,GAAG,EAAE;AAAvB;AAFhB,KAGMd,MAAM,CAACe,MAAP,EAHN;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KARF,CADF;AAgBD;KAvBuBX,I;AAuBvB",
+    "sourcesContent": [
+      "import imageUrlBuilder from \"@sanity/image-url\";\nimport BlockContent from \"@sanity/block-content-to-react\";\nimport client from \"../../sanity-client\";\nimport getPostBySlug from \"../../content-api\";\n\nfunction urlFor(source) {\n  return imageUrlBuilder(client).image(source);\n}\n\nexport async function getServerSideProps(context) {\n  const { slug = \"\" } = context.query;\n  const data = await getPostBySlug(slug);\n\n  return {\n    props: data,\n  };\n}\n\nexport default function Post(props) {\n  const {\n    title = \"Missing title\",\n    name = \"Missing name\",\n    authorImage,\n    body = [],\n  } = props;\n  return (\n    <article>\n      <h1>{title}</h1>\n      <span>By {name}</span>\n      {authorImage && (\n        <div>\n          <img alt=\"The author\" src={urlFor(authorImage).width(50).url()} />\n        </div>\n      )}\n      <BlockContent\n        blocks={body}\n        imageOptions={{ w: 320, h: 240, fit: \"max\" }}\n        {...client.config()}\n      />\n    </article>\n  );\n};\n\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

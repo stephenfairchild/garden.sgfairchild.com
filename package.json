@@ -1,0 +1,42 @@
+{
+  "name": "projects-and-portfolio",
+  "version": "1.0.0",
+  "description": "Just a simple site to track projects and some portfolio stuff.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix --ext ts,tsx src",
+    "format": "prettier --write \"**/*.+(ts|tsx|json|css|md)\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "keywords": [],
+  "author": "stephenfairchilddev@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/client": "^1.149.18",
+    "@sanity/image-url": "^0.140.19",
+    "@tailwindcss/ui": "^0.5.0",
+    "groq": "^1.149.16",
+    "install": "^0.13.0",
+    "moment": "^2.27.0",
+    "next": "^9.5.1",
+    "npm": "^6.14.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-wordcloud": "^1.2.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss-flexbugs-fixes": "4.2.1",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.0.5",
+    "tailwindcss": "^1.6.0"
+  }
+}

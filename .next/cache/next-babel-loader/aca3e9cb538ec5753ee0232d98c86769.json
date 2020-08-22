@@ -1,0 +1,28 @@
+{
+  "ast": null,
+  "code": "var _jsxFileName = \"/home/stephen/Apps/next-portfolio/pages/about.jsx\",\n    _s = $RefreshSig$();\n\nvar __jsx = React.createElement;\nimport Link from \"next/link\";\nimport React, { useState, useEffect } from \"react\";\nexport default function Home() {\n  _s();\n\n  var _this = this;\n\n  var _useState = useState([]),\n      content = _useState[0],\n      setContent = _useState[1];\n\n  var categories = [{\n    slug: \"cams-bike\",\n    name: \"Cam's Bike\"\n  }, {\n    slug: \"container-gardening\",\n    name: \"Container Gardening\"\n  }, {\n    slug: \"data-backups\",\n    name: \"Backing up data\"\n  }, {\n    slug: \"homebrewing\",\n    name: \"Homebrewing\"\n  }, {\n    slug: \"italian-cooking\",\n    name: \"Italian Cooking\"\n  }, {\n    slug: \"lego-projects\",\n    name: \"Lego Projects\"\n  }, {\n    slug: \"lindsays-ollie\",\n    name: \"Lindsay's Ollie\"\n  }, {\n    slug: \"train-build\",\n    name: \"Family Train Build\"\n  }];\n  return __jsx(\"div\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 19,\n      columnNumber: 9\n    }\n  }, content.map(function (content) {\n    return content;\n  }), __jsx(\"div\", {\n    className: \"container mx-auto text-center\",\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 21,\n      columnNumber: 13\n    }\n  }, __jsx(\"h1\", {\n    className: \"text-xl\",\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 22,\n      columnNumber: 17\n    }\n  }, \"Active personal and family projects\"), __jsx(\"ul\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 23,\n      columnNumber: 17\n    }\n  }, categories.map(function (category) {\n    return __jsx(\"a\", {\n      href: \"/project/\" + category.slug,\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 25,\n        columnNumber: 25\n      }\n    }, __jsx(\"li\", {\n      className: \"cursor-pointer hover:font-light\",\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 26,\n        columnNumber: 29\n      }\n    }, category.name));\n  }))));\n}\n\n_s(Home, \"AdaM8L354cx8imjulwvVz1sJ5ys=\");\n\n_c = Home;\n\nvar _c;\n\n$RefreshReg$(_c, \"Home\");",
+  "map": {
+    "version": 3,
+    "sources": ["/home/stephen/Apps/next-portfolio/pages/about.jsx"],
+    "names": [
+      "Link",
+      "React",
+      "useState",
+      "useEffect",
+      "Home",
+      "content",
+      "setContent",
+      "categories",
+      "slug",
+      "name",
+      "map",
+      "category"
+    ],
+    "mappings": ";;;;AAAA,OAAOA,IAAP,MAAiB,WAAjB;AACA,OAAOC,KAAP,IAAgBC,QAAhB,EAA0BC,SAA1B,QAA2C,OAA3C;AAEA,eAAe,SAASC,IAAT,GAAgB;AAAA;;AAAA;;AAAA,kBACGF,QAAQ,CAAC,EAAD,CADX;AAAA,MACpBG,OADoB;AAAA,MACXC,UADW;;AAG3B,MAAMC,UAAU,GAAG,CACf;AAAEC,IAAAA,IAAI,EAAE,WAAR;AAAqBC,IAAAA,IAAI,EAAE;AAA3B,GADe,EAEf;AAAED,IAAAA,IAAI,EAAE,qBAAR;AAA+BC,IAAAA,IAAI,EAAE;AAArC,GAFe,EAGf;AAAED,IAAAA,IAAI,EAAE,cAAR;AAAwBC,IAAAA,IAAI,EAAE;AAA9B,GAHe,EAIf;AAAED,IAAAA,IAAI,EAAE,aAAR;AAAuBC,IAAAA,IAAI,EAAE;AAA7B,GAJe,EAKf;AAAED,IAAAA,IAAI,EAAE,iBAAR;AAA2BC,IAAAA,IAAI,EAAE;AAAjC,GALe,EAMf;AAAED,IAAAA,IAAI,EAAE,eAAR;AAAyBC,IAAAA,IAAI,EAAE;AAA/B,GANe,EAOf;AAAED,IAAAA,IAAI,EAAE,gBAAR;AAA0BC,IAAAA,IAAI,EAAE;AAAhC,GAPe,EAQf;AAAED,IAAAA,IAAI,EAAE,aAAR;AAAuBC,IAAAA,IAAI,EAAE;AAA7B,GARe,CAAnB;AAWA,SACI;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACKJ,OAAO,CAACK,GAAR,CAAY,UAAAL,OAAO;AAAA,WAAIA,OAAJ;AAAA,GAAnB,CADL,EAEI;AAAK,IAAA,SAAS,EAAC,+BAAf;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACI;AAAI,IAAA,SAAS,EAAC,SAAd;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,2CADJ,EAEI;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACKE,UAAU,CAACG,GAAX,CAAe,UAAAC,QAAQ;AAAA,WACpB;AAAG,MAAA,IAAI,EAAE,cAAcA,QAAQ,CAACH,IAAhC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OACI;AAAI,MAAA,SAAS,EAAC,iCAAd;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OACKG,QAAQ,CAACF,IADd,CADJ,CADoB;AAAA,GAAvB,CADL,CAFJ,CAFJ,CADJ;AAiBH;;GA/BuBL,I;;KAAAA,I",
+    "sourcesContent": [
+      "import Link from \"next/link\";\nimport React, { useState, useEffect } from \"react\";\n\nexport default function Home() {\n    const [content, setContent] = useState([]);\n\n    const categories = [\n        { slug: \"cams-bike\", name: \"Cam's Bike\" },\n        { slug: \"container-gardening\", name: \"Container Gardening\" },\n        { slug: \"data-backups\", name: \"Backing up data\" },\n        { slug: \"homebrewing\", name: \"Homebrewing\" },\n        { slug: \"italian-cooking\", name: \"Italian Cooking\" },\n        { slug: \"lego-projects\", name: \"Lego Projects\" },\n        { slug: \"lindsays-ollie\", name: \"Lindsay's Ollie\" },\n        { slug: \"train-build\", name: \"Family Train Build\" }\n    ];\n\n    return (\n        <div>\n            {content.map(content => content)}\n            <div className=\"container mx-auto text-center\">\n                <h1 className=\"text-xl\">Active personal and family projects</h1>\n                <ul>\n                    {categories.map(category => (\n                        <a href={\"/project/\" + category.slug}>\n                            <li className=\"cursor-pointer hover:font-light\">\n                                {category.name}\n                            </li>\n                        </a>\n                    ))}\n                </ul>\n            </div>\n        </div>\n    );\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

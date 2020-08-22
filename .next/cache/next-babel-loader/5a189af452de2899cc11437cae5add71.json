@@ -1,0 +1,37 @@
+{
+  "ast": null,
+  "code": "import _regeneratorRuntime from \"@babel/runtime/regenerator\";\nimport _asyncToGenerator from \"@babel/runtime/helpers/esm/asyncToGenerator\";\nimport _taggedTemplateLiteral from \"@babel/runtime/helpers/esm/taggedTemplateLiteral\";\n\nvar _this = this,\n    _jsxFileName = \"/home/stephen/Apps/next-portfolio/pages/post/[slug].jsx\";\n\nimport React from \"react\";\nvar __jsx = React.createElement;\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"*[_type == \\\"post\\\" && slug.current == $slug][0]{\\n  title,\\n  \\\"name\\\": author->name,\\n  \\\"categories\\\": categories[]->title,\\n  \\\"authorImage\\\": author->image\\n}\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\n// [slug].js\nimport groq from 'groq';\nimport imageUrlBuilder from '@sanity/image-url';\nimport client from '../../client';\n\nfunction urlFor(source) {\n  return imageUrlBuilder(client).image(source);\n}\n\nvar Post = function Post(props) {\n  var _props$title = props.title,\n      title = _props$title === void 0 ? 'Missing title' : _props$title,\n      _props$name = props.name,\n      name = _props$name === void 0 ? 'Missing name' : _props$name,\n      categories = props.categories,\n      authorImage = props.authorImage;\n  return __jsx(\"article\", {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 19,\n      columnNumber: 5\n    }\n  }, __jsx(\"h1\", {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 20,\n      columnNumber: 7\n    }\n  }, title), __jsx(\"span\", {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 21,\n      columnNumber: 7\n    }\n  }, \"By \", name), categories && __jsx(\"ul\", {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 23,\n      columnNumber: 9\n    }\n  }, \"Posted in\", categories.map(function (category) {\n    return __jsx(\"li\", {\n      key: category,\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 25,\n        columnNumber: 39\n      }\n    }, category);\n  })), authorImage && __jsx(\"div\", {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 29,\n      columnNumber: 9\n    }\n  }, __jsx(\"img\", {\n    src: urlFor(authorImage).width(50).url(),\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 30,\n      columnNumber: 11\n    }\n  })));\n};\n\n_c = Post;\nvar query = groq(_templateObject());\n\nPost.getInitialProps = /*#__PURE__*/function () {\n  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(context) {\n    var _context$query$slug, slug;\n\n    return _regeneratorRuntime.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            // It's important to default the slug so that it doesn't return \"undefined\"\n            _context$query$slug = context.query.slug, slug = _context$query$slug === void 0 ? \"\" : _context$query$slug;\n            _context.next = 3;\n            return client.fetch(query, {\n              slug: slug\n            });\n\n          case 3:\n            return _context.abrupt(\"return\", _context.sent);\n\n          case 4:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n\n  return function (_x) {\n    return _ref.apply(this, arguments);\n  };\n}();\n\nexport default Post; // [slug].js\n\nvar _c;\n\n$RefreshReg$(_c, \"Post\");",
+  "map": {
+    "version": 3,
+    "sources": ["/home/stephen/Apps/next-portfolio/pages/post/[slug].jsx"],
+    "names": [
+      "groq",
+      "imageUrlBuilder",
+      "client",
+      "urlFor",
+      "source",
+      "image",
+      "Post",
+      "props",
+      "title",
+      "name",
+      "categories",
+      "authorImage",
+      "map",
+      "category",
+      "width",
+      "url",
+      "query",
+      "getInitialProps",
+      "context",
+      "slug",
+      "fetch"
+    ],
+    "mappings": ";;;;;;;;;;;;;;;;;;;;AAAA;AAEA,OAAOA,IAAP,MAAiB,MAAjB;AACA,OAAOC,eAAP,MAA4B,mBAA5B;AACA,OAAOC,MAAP,MAAmB,cAAnB;;AAEA,SAASC,MAAT,CAAiBC,MAAjB,EAAyB;AACvB,SAAOH,eAAe,CAACC,MAAD,CAAf,CAAwBG,KAAxB,CAA8BD,MAA9B,CAAP;AACD;;AAED,IAAME,IAAI,GAAG,SAAPA,IAAO,CAACC,KAAD,EAAW;AAAA,qBAMlBA,KANkB,CAEpBC,KAFoB;AAAA,MAEpBA,KAFoB,6BAEZ,eAFY;AAAA,oBAMlBD,KANkB,CAGpBE,IAHoB;AAAA,MAGpBA,IAHoB,4BAGb,cAHa;AAAA,MAIpBC,UAJoB,GAMlBH,KANkB,CAIpBG,UAJoB;AAAA,MAKpBC,WALoB,GAMlBJ,KANkB,CAKpBI,WALoB;AAOtB,SACE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAKH,KAAL,CADF,EAEE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,YAAUC,IAAV,CAFF,EAGGC,UAAU,IACT;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,kBAEGA,UAAU,CAACE,GAAX,CAAe,UAAAC,QAAQ;AAAA,WAAI;AAAI,MAAA,GAAG,EAAEA,QAAT;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OAAoBA,QAApB,CAAJ;AAAA,GAAvB,CAFH,CAJJ,EASGF,WAAW,IACV;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE;AACE,IAAA,GAAG,EAAER,MAAM,CAACQ,WAAD,CAAN,CACFG,KADE,CACI,EADJ,EAEFC,GAFE,EADP;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IADF,CAVJ,CADF;AAqBD,CA5BD;;KAAMT,I;AA8BN,IAAMU,KAAK,GAAGhB,IAAH,mBAAX;;AAOAM,IAAI,CAACW,eAAL;AAAA,sEAAuB,iBAAgBC,OAAhB;AAAA;;AAAA;AAAA;AAAA;AAAA;AACrB;AADqB,kCAECA,OAAO,CAACF,KAFT,CAEbG,IAFa,EAEbA,IAFa,oCAEN,EAFM;AAAA;AAAA,mBAGRjB,MAAM,CAACkB,KAAP,CAAaJ,KAAb,EAAoB;AAC/BG,cAAAA,IAAI,EAAJA;AAD+B,aAApB,CAHQ;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,GAAvB;;AAAA;AAAA;AAAA;AAAA;;AAQA,eAAeb,IAAf,C,CAAmB",
+    "sourcesContent": [
+      "// [slug].js\n\nimport groq from 'groq'\nimport imageUrlBuilder from '@sanity/image-url'\nimport client from '../../client'\n\nfunction urlFor (source) {\n  return imageUrlBuilder(client).image(source)\n}\n\nconst Post = (props) => {\n  const {\n    title = 'Missing title',\n    name = 'Missing name',\n    categories,\n    authorImage\n  } = props\n  return (\n    <article>\n      <h1>{title}</h1>\n      <span>By {name}</span>\n      {categories && (\n        <ul>\n          Posted in\n          {categories.map(category => <li key={category}>{category}</li>)}\n        </ul>\n      )}\n      {authorImage && (\n        <div>\n          <img\n            src={urlFor(authorImage)\n              .width(50)\n              .url()}\n          />\n        </div>\n      )}\n    </article>\n  )\n}\n\nconst query = groq`*[_type == \"post\" && slug.current == $slug][0]{\n  title,\n  \"name\": author->name,\n  \"categories\": categories[]->title,\n  \"authorImage\": author->image\n}`\n\nPost.getInitialProps = async function (context) {\n  // It's important to default the slug so that it doesn't return \"undefined\"\n  const { slug = \"\" } = context.query\n  return await client.fetch(query, {\n    slug\n  })\n}\n\nexport default Post// [slug].js\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

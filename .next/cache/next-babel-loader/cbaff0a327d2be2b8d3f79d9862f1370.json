@@ -1,0 +1,41 @@
+{
+  "ast": null,
+  "code": "var _jsxFileName = \"/home/stephen/Apps/next-portfolio/src/pages/posts/[slug].tsx\";\nimport React from \"react\";\nvar __jsx = React.createElement;\n\nfunction _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\nimport imageUrlBuilder from \"@sanity/image-url\";\nimport BlockContent from \"@sanity/block-content-to-react\";\nimport client from \"../../sanity-client\";\nimport getPostBySlug from \"../../content-api\";\n\nfunction urlFor(source) {\n  return imageUrlBuilder(client).image(source);\n}\n\nexport async function getServerSideProps(context) {\n  const {\n    slug = \"\"\n  } = context.query;\n  const data = await getPostBySlug(slug);\n  return {\n    props: data\n  };\n}\nexport default function Post(props) {\n  const {\n    title,\n    name,\n    authorImage,\n    publishedAt,\n    body = []\n  } = props;\n  return __jsx(\"article\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 28,\n      columnNumber: 5\n    }\n  }, __jsx(\"h3\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 29,\n      columnNumber: 7\n    }\n  }, publishedAt), __jsx(\"h1\", {\n    class: \"bold text-center\",\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 30,\n      columnNumber: 7\n    }\n  }, title), __jsx(BlockContent, _extends({\n    blocks: body,\n    imageOptions: {\n      w: 320,\n      h: 240,\n      fit: \"max\"\n    }\n  }, client.config(), {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 31,\n      columnNumber: 7\n    }\n  })), __jsx(\"span\", {\n    class: \"text-center\",\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 36,\n      columnNumber: 7\n    }\n  }, \"By \", name), authorImage && __jsx(\"div\", {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 38,\n      columnNumber: 9\n    }\n  }, __jsx(\"img\", {\n    alt: \"The author\",\n    src: urlFor(authorImage).width(100).url(),\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 39,\n      columnNumber: 11\n    }\n  })));\n}\n;",
+  "map": {
+    "version": 3,
+    "sources": ["/home/stephen/Apps/next-portfolio/src/pages/posts/[slug].tsx"],
+    "names": [
+      "imageUrlBuilder",
+      "BlockContent",
+      "client",
+      "getPostBySlug",
+      "urlFor",
+      "source",
+      "image",
+      "getServerSideProps",
+      "context",
+      "slug",
+      "query",
+      "data",
+      "props",
+      "Post",
+      "title",
+      "name",
+      "authorImage",
+      "publishedAt",
+      "body",
+      "w",
+      "h",
+      "fit",
+      "config",
+      "width",
+      "url"
+    ],
+    "mappings": ";;;;;;AAAA,OAAOA,eAAP,MAA4B,mBAA5B;AACA,OAAOC,YAAP,MAAyB,gCAAzB;AACA,OAAOC,MAAP,MAAmB,qBAAnB;AACA,OAAOC,aAAP,MAA0B,mBAA1B;;AAEA,SAASC,MAAT,CAAgBC,MAAhB,EAAwB;AACtB,SAAOL,eAAe,CAACE,MAAD,CAAf,CAAwBI,KAAxB,CAA8BD,MAA9B,CAAP;AACD;;AAED,OAAO,eAAeE,kBAAf,CAAkCC,OAAlC,EAA2C;AAChD,QAAM;AAAEC,IAAAA,IAAI,GAAG;AAAT,MAAgBD,OAAO,CAACE,KAA9B;AACA,QAAMC,IAAI,GAAG,MAAMR,aAAa,CAACM,IAAD,CAAhC;AAEA,SAAO;AACLG,IAAAA,KAAK,EAAED;AADF,GAAP;AAGD;AAED,eAAe,SAASE,IAAT,CAAcD,KAAd,EAAqB;AAClC,QAAM;AACJE,IAAAA,KADI;AAEJC,IAAAA,IAFI;AAGJC,IAAAA,WAHI;AAIJC,IAAAA,WAJI;AAKJC,IAAAA,IAAI,GAAG;AALH,MAMFN,KANJ;AAOA,SACE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAMK,WAAN,CADF,EAEE;AAAI,IAAA,KAAK,EAAC,kBAAV;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAA8BH,KAA9B,CAFF,EAGE,MAAC,YAAD;AACE,IAAA,MAAM,EAAEI,IADV;AAEE,IAAA,YAAY,EAAE;AAAEC,MAAAA,CAAC,EAAE,GAAL;AAAUC,MAAAA,CAAC,EAAE,GAAb;AAAkBC,MAAAA,GAAG,EAAE;AAAvB;AAFhB,KAGMnB,MAAM,CAACoB,MAAP,EAHN;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAHF,EAQE;AAAM,IAAA,KAAK,EAAC,aAAZ;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,YAA8BP,IAA9B,CARF,EASGC,WAAW,IACV;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE;AAAK,IAAA,GAAG,EAAC,YAAT;AAAsB,IAAA,GAAG,EAAEZ,MAAM,CAACY,WAAD,CAAN,CAAoBO,KAApB,CAA0B,GAA1B,EAA+BC,GAA/B,EAA3B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IADF,CAVJ,CADF;AAiBD;AAAA",
+    "sourcesContent": [
+      "import imageUrlBuilder from \"@sanity/image-url\";\nimport BlockContent from \"@sanity/block-content-to-react\";\nimport client from \"../../sanity-client\";\nimport getPostBySlug from \"../../content-api\";\n\nfunction urlFor(source) {\n  return imageUrlBuilder(client).image(source);\n}\n\nexport async function getServerSideProps(context) {\n  const { slug = \"\" } = context.query;\n  const data = await getPostBySlug(slug);\n\n  return {\n    props: data,\n  };\n}\n\nexport default function Post(props) {\n  const {\n    title,\n    name,\n    authorImage,\n    publishedAt,\n    body = [],\n  } = props;\n  return (\n    <article>\n      <h3>{ publishedAt }</h3>\n      <h1 class=\"bold text-center\">{title}</h1>\n      <BlockContent\n        blocks={body}\n        imageOptions={{ w: 320, h: 240, fit: \"max\" }}\n        {...client.config()}\n      />\n      <span class=\"text-center\">By {name}</span>\n      {authorImage && (\n        <div>\n          <img alt=\"The author\" src={urlFor(authorImage).width(100).url()} />\n        </div>\n      )}\n    </article>\n  );\n};\n\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

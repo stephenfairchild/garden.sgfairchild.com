@@ -1,0 +1,32 @@
+{
+  "ast": null,
+  "code": "var _jsxFileName = \"/home/stephen/Apps/next-portfolio/src/render-body-content.tsx\";\nimport React from \"react\";\nvar __jsx = React.createElement;\n\nfunction _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\nimport BlockContent from \"@sanity/block-content-to-react\";\nimport client from \"./sanity-client\";\nexport default function RenderBodyContent(body) {\n  const serializers = {\n    types: {\n      code: props => __jsx(\"pre\", {\n        \"data-language\": props.node.language,\n        __self: this,\n        __source: {\n          fileName: _jsxFileName,\n          lineNumber: 8,\n          columnNumber: 11\n        }\n      }, __jsx(\"code\", {\n        __self: this,\n        __source: {\n          fileName: _jsxFileName,\n          lineNumber: 9,\n          columnNumber: 13\n        }\n      }, props.node.code))\n    }\n  };\n  return __jsx(BlockContent, _extends({\n    serializers: serializers,\n    blocks: body,\n    imageOptions: {\n      w: 320,\n      h: 240,\n      fit: \"max\"\n    }\n  }, client.config(), {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 15,\n      columnNumber: 12\n    }\n  }));\n}",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/home/stephen/Apps/next-portfolio/src/render-body-content.tsx"
+    ],
+    "names": [
+      "BlockContent",
+      "client",
+      "RenderBodyContent",
+      "body",
+      "serializers",
+      "types",
+      "code",
+      "props",
+      "node",
+      "language",
+      "w",
+      "h",
+      "fit",
+      "config"
+    ],
+    "mappings": ";;;;;;AAAA,OAAOA,YAAP,MAAyB,gCAAzB;AACA,OAAOC,MAAP,MAAmB,iBAAnB;AAEA,eAAe,SAASC,iBAAT,CAA2BC,IAA3B,EAAiC;AAC5C,QAAMC,WAAW,GAAG;AAClBC,IAAAA,KAAK,EAAE;AACLC,MAAAA,IAAI,EAAEC,KAAK,IACT;AAAK,yBAAeA,KAAK,CAACC,IAAN,CAAWC,QAA/B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,SACE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,SAAOF,KAAK,CAACC,IAAN,CAAWF,IAAlB,CADF;AAFG;AADW,GAApB;AAUA,SAAO,MAAC,YAAD;AACC,IAAA,WAAW,EAAEF,WADd;AAEC,IAAA,MAAM,EAAED,IAFT;AAGC,IAAA,YAAY,EAAE;AAAEO,MAAAA,CAAC,EAAE,GAAL;AAAUC,MAAAA,CAAC,EAAE,GAAb;AAAkBC,MAAAA,GAAG,EAAE;AAAvB;AAHf,KAIKX,MAAM,CAACY,MAAP,EAJL;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAP;AAMH",
+    "sourcesContent": [
+      "import BlockContent from \"@sanity/block-content-to-react\";\nimport client from \"./sanity-client\";\n\nexport default function RenderBodyContent(body) {\n    const serializers = {\n      types: {\n        code: props => (\n          <pre data-language={props.node.language}>\n            <code>{props.node.code}</code>\n          </pre>\n        )\n      }\n    }\n\n    return <BlockContent\n            serializers={serializers}\n            blocks={body}\n            imageOptions={{ w: 320, h: 240, fit: \"max\" }}\n            {...client.config()}\n        />\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}
