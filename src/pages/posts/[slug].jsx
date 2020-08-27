@@ -1,6 +1,6 @@
 import imageUrlBuilder from "@sanity/image-url";
 import client from "../../sanity-client";
-import getPostBySlug from "../../content-api";
+import getPostBySlug, { getAllPosts } from "../../content-api";
 import moment from "moment";
 import renderBodyContent from "../../render-body-content";
 import Navbar from "../../components/navbar";
@@ -10,12 +10,21 @@ function urlFor(source) {
 }
 
 export async function getStaticProps(context) {
-    const { slug = "" } = context.query;
-    const data = await getPostBySlug(slug);
+    const data = await getPostBySlug(context.params.slug);
 
     return {
         props: data
     };
+}
+
+export async function getStaticPaths() {
+    const posts = await getAllPosts();
+
+    const paths = posts.map(post => ({
+        params: { slug: post.slug.current }
+    }));
+
+    return { paths, fallback: false };
 }
 
 export default function Post(props) {

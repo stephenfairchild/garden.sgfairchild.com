@@ -1,16 +1,24 @@
 import Head from "next/head";
-import { getAllPostsInCategory } from "../../content-api";
+import { getAllPostsInCategory, getAllCategories } from "../../content-api";
 import Navbar from "../../components/navbar";
 
 export async function getStaticProps(context) {
-    const { category = "" } = context.query;
-    const data = await getAllPostsInCategory(category);
+    const data = await getAllPostsInCategory(context.params.category);
 
     return {
         props: {
             posts: data
         }
     };
+}
+
+export async function getStaticPaths() {
+    const categories = await getAllCategories();
+    const paths = categories.map(category => ({
+        params: { category: category.slug.current }
+    }));
+
+    return { paths, fallback: false };
 }
 
 export default function Category(props) {

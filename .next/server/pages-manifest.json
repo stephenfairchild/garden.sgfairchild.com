@@ -1,11 +1,9 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/category/[category]": "pages/category/[category].js",
-  "/code": "pages/code.html",
-  "/": "pages/index.js",
-  "/pictures": "pages/pictures.html",
-  "/posts/[slug]": "pages/posts/[slug].js",
   "/_error": "pages/_error.js",
-  "/404": "pages/404.html"
+  "/": "pages/index.js",
+  "/category/[category]": "pages/category/[category].js",
+  "/posts/[slug]": "pages/posts/[slug].js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }

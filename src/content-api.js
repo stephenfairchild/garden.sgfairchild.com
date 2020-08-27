@@ -14,6 +14,16 @@ export default async function getPostBySlug(slug) {
     return client.fetch(query, { slug });
 }
 
+export async function getAllPosts() {
+    const query = groq`*[_type == "post"]{
+        title,
+        description,
+        slug,
+      }`;
+
+    return client.fetch(query, {});
+}
+
 export async function getAllCategories() {
     const query = groq`*[_type == "category"]{
         title,
