@@ -2,7 +2,7 @@ import Head from "next/head";
 import { getAllPostsInCategory } from "../../content-api";
 import Navbar from "../../components/navbar";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
     const { category = "" } = context.query;
     const data = await getAllPostsInCategory(category);
 

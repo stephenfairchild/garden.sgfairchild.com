@@ -2,7 +2,7 @@ import Head from "next/head";
 import { getAllCategories } from "../content-api";
 import Navbar from "../components/navbar";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const data = await getAllCategories();
 
     return {

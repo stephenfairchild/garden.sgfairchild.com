@@ -9,7 +9,7 @@ function urlFor(source) {
     return imageUrlBuilder(client).image(source);
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
     const { slug = "" } = context.query;
     const data = await getPostBySlug(slug);
 
