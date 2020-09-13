@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { getAllCategories } from "../content-api";
-import Navbar from "../components/navbar";
+import imageBuilder from "../image-builder";
 
 export async function getStaticProps() {
     const data = await getAllCategories();
@@ -14,23 +14,28 @@ export async function getStaticProps() {
 
 export default function Index(props) {
     const { categories } = props;
+    const showImage = src => imageBuilder(src).height(400).width(400).url();
+
+    const goTo = url => (window.location.href = url);
 
     return (
         <>
-            <Navbar />
-            <div>
-                <div>
-                    {categories.map(category => (
-                        <div className="float-left bg-gray-700 w-64 h-24 m-2 relative cursor-pointer">
-                            <div className="bg-gray-300 w-64 z-10 h-10 p-2 absolute bottom-0 hover:font-light">
-                                <a href={`/category/${category.slug.current}`}>
-                                    {category.title}
-                                </a>
-                            </div>
-                        </div>
-                    ))}
+            {categories.map(category => (
+                <div
+                    onClick={() => goTo(`/category/${category.slug.current}`)}
+                    className="relative float-left sm:w-full sm:h-full md:w-64 md:h-64 m-2 cursor-pointer"
+                >
+                    <img
+                        className="relative object-scale-down h-full w-full"
+                        src={showImage(category.image)}
+                    />
+                    <div className="absolute bottom-0 left-0">
+                        <span className="text-white tracking-tighter ml-2 p-1 text-2xl bg-opacity-75 bg-black">
+                            {category.title}
+                        </span>
+                    </div>
                 </div>
-            </div>
+            ))}
         </>
     );
 }

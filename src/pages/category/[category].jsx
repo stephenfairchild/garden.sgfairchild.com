@@ -1,13 +1,20 @@
 import Head from "next/head";
-import { getAllPostsInCategory, getAllCategories } from "../../content-api";
-import Navbar from "../../components/navbar";
+import {
+    getAllPostsInCategory,
+    getAllCategories,
+    getCategoryBySlug
+} from "../../content-api";
+import ListOfPosts from "../../components/ListOfPosts";
+import PhotoPosts from "../../components/PhotoPosts";
 
 export async function getStaticProps(context) {
-    const data = await getAllPostsInCategory(context.params.category);
+    const posts = await getAllPostsInCategory(context.params.category);
+    const category = await getCategoryBySlug(context.params.category);
 
     return {
         props: {
-            posts: data
+            posts,
+            category
         }
     };
 }
@@ -22,27 +29,15 @@ export async function getStaticPaths() {
 }
 
 export default function Category(props) {
-    const { posts } = props;
+    const { posts, category } = props;
 
-    return (
-        <>
-            <Navbar />
-            <div>
-                <div>
-                    <div className="container mx-auto text-center">
-                        <h1 className="text-xl">Most recent</h1>
-                        <ul>
-                            {posts.map(post => (
-                                <a href={`/posts/${post.slug}`}>
-                                    <li className="cursor-pointer hover:font-light">
-                                        {post.title}
-                                    </li>
-                                </a>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+    const displayPosts = () => {
+        if (category.type.includes("list")) {
+            return <ListOfPosts posts={posts} />;
+        } else if (category.type.includes("photo")) {
+            return <PhotoPosts posts={posts} />;
+        }
+    };
+
+    return <>{displayPosts()}</>;
 }

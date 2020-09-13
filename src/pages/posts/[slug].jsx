@@ -3,7 +3,6 @@ import client from "../../sanity-client";
 import getPostBySlug, { getAllPosts } from "../../content-api";
 import moment from "moment";
 import renderBodyContent from "../../render-body-content";
-import Navbar from "../../components/navbar";
 
 function urlFor(source) {
     return imageUrlBuilder(client).image(source);
@@ -19,6 +18,8 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
     const posts = await getAllPosts();
+    debugger;
+    console.log(posts);
 
     const paths = posts.map(post => ({
         params: { slug: post.slug.current }
@@ -31,8 +32,7 @@ export default function Post(props) {
     const { title, publishedAt, body = [] } = props;
     return (
         <>
-            <Navbar />
-            <article className="p-8 mx-auto max-w-6xl">
+            <article>
                 <h3 className="font-bold text-gray-500">
                     {moment(publishedAt).format("MMMM Do, YYYY")}
                 </h3>

@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "export": "next export",
-        "dev": "next",
+        "dev": "NODE_OPTIONS='--inspect' next dev",
         "build": "next build",
         "start": "next start",
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,6 +23,7 @@
         "@sanity/client": "^1.149.18",
         "@sanity/image-url": "^0.140.19",
         "@tailwindcss/ui": "^0.5.0",
+        "fontisto": "^3.0.4",
         "groq": "^1.149.16",
         "install": "^0.13.0",
         "moment": "^2.27.0",
@@ -30,10 +31,12 @@
         "npm": "^6.14.7",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "react-wordcloud": "^1.2.7"
+        "react-wordcloud": "^1.2.7",
+        "sass": "^1.26.10"
     },
     "devDependencies": {
         "autoprefixer": "^9.8.6",
+        "cypress": "^5.1.0",
         "postcss-flexbugs-fixes": "4.2.1",
         "postcss-import": "^12.0.1",
         "postcss-preset-env": "^6.7.0",
