@@ -12,9 +12,6 @@ export default function Grid(props) {
                 className="lg:float-left sm:w-full sm:h-full md:w-64 md:h-64 p-1"
                 src={showImage(post.mainImage)}
             />
-            {title === post.title && (
-                <span className="absolute bottom-0 left-0">Read more</span>
-            )}
         </div>
     ));
 }

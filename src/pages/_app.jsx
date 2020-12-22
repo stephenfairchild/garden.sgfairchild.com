@@ -1,6 +1,4 @@
-import "../styles/index.css";
-import "tippy.js/dist/tippy.css";
-import "tippy.js/animations/scale.css";
+import "../styles/globals.css";
 import "fontisto";
 import Header from "../components/Header";
 

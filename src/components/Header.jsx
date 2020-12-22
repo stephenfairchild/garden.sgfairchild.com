@@ -1,7 +1,7 @@
 function Header() {
     return (
         <>
-            <div className="md:container mx-auto">Header File</div>
+            <div className="md:container mx-auto"></div>
         </>
     );
 }

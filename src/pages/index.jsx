@@ -23,14 +23,14 @@ export default function Index(props) {
             {categories.map(category => (
                 <div
                     onClick={() => goTo(`/category/${category.slug.current}`)}
-                    className="relative float-left sm:w-full sm:h-full md:w-64 md:h-64 m-2 cursor-pointer"
+                    className="relative float-left sm:w-full sm:h-full md:w-64 md:h-64 m-1 cursor-pointer"
                 >
                     <img
                         className="relative object-scale-down h-full w-full"
                         src={showImage(category.image)}
                     />
                     <div className="absolute bottom-0 left-0">
-                        <span className="text-white tracking-tighter ml-2 p-1 text-2xl bg-opacity-75 bg-black">
+                        <span className="text-white tracking-tighter ml-2 pl-1 pr-1 text-2xl bg-opacity-75 bg-black">
                             {category.title}
                         </span>
                     </div>
