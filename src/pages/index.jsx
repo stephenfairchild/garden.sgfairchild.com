@@ -22,6 +22,7 @@ export default function Index(props) {
         <>
             {categories.map(category => (
                 <div
+                    key={category.title}
                     onClick={() => goTo(`/category/${category.slug.current}`)}
                     className="relative float-left sm:w-full sm:h-full md:w-64 md:h-64 m-1 cursor-pointer"
                 >
