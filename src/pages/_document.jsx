@@ -31,7 +31,7 @@ class MyDocument extends Document {
                     <meta name="theme-color" content="#ffffff" />
                 </Head>
 
-                <body className="bg-gray-200">
+                <body>
                     <Main />
                     <NextScript />
                 </body>
